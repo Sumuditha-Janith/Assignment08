@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Case 02</title>
+  <style>
+    section {
+      align-content: center;
+      width: 1010px;
+      position: relative;
+      top: 200px;
+      left: 250px;
+    }
+
+    .box {
+      width: 150px;
+      height: 50px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    section > div {
+      display: flex;
+      border-bottom: 1px solid black;
+    }
+
+    section > div:nth-child(2) {
+      padding: 0 200px;
+    }
+    section > div:nth-child(2) > div {
+      margin:  10px;
+    }
+
+    section > div:nth-child(3) > .box {
+      margin-left: 850px;
+    }
+  </style>
 </head>
 <body>
-$END$
+<section>
+  <div>
+    <div class="box"></div>
+  </div>
+  <div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <div>
+    <div class="box"></div>
+  </div>
+</section>
+
+<script>
+  let colors = ['red', 'green', 'blue', 'yellow', 'orange', 'brown'];
+
+  const updateColors = () => {
+    let lastColor = colors.pop();
+    colors.unshift(lastColor);
+
+    colors.map((item, index) => {
+      document.getElementsByClassName('box')[index].style.background = item;
+    });
+
+  }
+  setInterval(updateColors, 1000);
+</script>
 </body>
 </html>

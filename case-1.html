@@ -2,9 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Case 01</title>
+    <style>
+        html {
+            background-color: #fcf6f6;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 200px;
+        }
+        .letter{
+            text-align: center;
+        }
+        .home{
+            margin-top: -20px;
+        }
+
+    </style>
 </head>
 <body>
+<section>
+    <div>
+        <div class="letter">A</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div>
+        <div class="letter">B</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div>
+        <div class="letter">C</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div>
+        <div class="letter">D</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div>
+        <div class="letter">E</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div>
+        <div class="letter">F</div>
+        <div class="man"><img src="assets/man.gif" width="200px"></div>
+    </div>
+    <div class="home">
+        <img src="assets/home.png" width="250px">
+    </div>
+</section>
 
+<script>
+    let queue = ['A','B','C','D','E','F'];
+
+    const  updateLetters = () => {
+        let lastLetter = queue.pop();
+        queue.unshift(lastLetter);
+
+        queue.map((item, index) => {
+            document.getElementsByClassName('letter')[index].innerText = item;
+        });
+    }
+
+    setInterval(updateLetters, 3000);
+</script>
 </body>
 </html>
